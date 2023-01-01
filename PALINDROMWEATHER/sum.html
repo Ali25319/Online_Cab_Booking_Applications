@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // Javascript implementation of simple method to find count of
+        // pairs with given sum.
+        
+        // Returns number of pairs in arr[0..n-1] with sum equal
+        // to 'sum'
+        function getPairsCount(arr, n, sum)
+        {
+            let count = 0; // Initialize result
+        
+            // Consider all possible pairs and check their sums
+            for (let i = 0; i < n; i++)
+                for (let j = i + 1; j < n; j++)
+                    if (arr[i] + arr[j] == sum)
+                        count++;
+        
+            return count;
+        }
+        
+        // Driver function to test the above function
+            let arr = [ 3,1,1,4 ];
+            let n = arr.length;
+            let sum = 4;
+            console.log("Count of pairs is " + getPairsCount(arr, n, sum));
+            
+        // This code is contributed by Mayank Tyagi
+        
+        </script>
+        
+</body>
+</html>

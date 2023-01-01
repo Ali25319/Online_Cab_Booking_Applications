@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>setInterval</h3>
+    <script>
+
+// function Display()  {  
+//     console.log("Hello JavaTpoint");  
+// }  
+  
+// setInterval(Display, 200);  
+
+//  function setTime(){
+//     console.log("after some time");
+//  } 
+//  setTimeout(setTime, 3000);
+
+// setTimeout ( () =>{
+//     console.log("delayed for some times");
+// }, 4000)
+  
+// setInterval( () =>{
+//     console.log('repeated task');
+// }, 2000)
+
+//  function Display (){
+//     console.log('hey you buddy');
+//  }
+//   setInterval(Display, 2000)
+
+//   function DisplayTimeOut(){
+//     console.log('delay after some given time');
+//   }
+//   setTimeout(DisplayTimeOut, 2000)
+// function foo() {
+//   console.log('foo has been called');
+// }
+// setTimeout(foo, 1000);
+// console.log('After setTimeout');
+
+  
+// Whole-script strict mode syntax
+// 'use strict';
+
+// //  a = 10;
+// //   console.log(a);
+//  let b = 20;
+//  console.log(b);
+
+function strict1(str) {
+  'use strict';
+  return eval(str); // str will be treated as strict mode code
+}
+
+function strict2(f, str) {
+  'use strict';
+  return f(str); // not eval(...): str is strict if and only
+                 // if it invokes strict mode
+}
+
+function nonstrict(str) {
+  return eval(str); // str is strict if and only
+                    // if it invokes strict mode
+}
+
+strict1("'Strict mode code!'");
+strict1("'use strict'; 'Strict mode code!'");
+   
+
+
+console.log(strict1 (str));
+ console.log(strict2);
+
+    </script>
+    
+</body>
+</html>

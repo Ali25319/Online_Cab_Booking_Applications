@@ -1,0 +1,36 @@
+.mainDiv{
+    position: relative;
+    width: 206px;
+    height: 190px;
+    margin: 0px auto;
+    margin-top:100px;
+  }
+  .square{
+    width:100px;
+    height:100px;
+    background:#c52329;
+    float:left;
+    transform: skew(180deg,210deg);
+    position: absolute;
+    top: 43px;
+  }
+  .square2{
+    width:100px;
+    height:100px;
+    background:#c52329;
+    float:left;
+    transform: skew(180deg,150deg);
+    position: absolute;
+    left:102px;
+    top: 43px;
+  }
+  .square3{
+    width:110px;
+    height:110px;
+    background:#c52329;
+    float:left;
+    transform: rotate(45deg) skew(-15deg, -15deg);
+    position: absolute;
+    left: 46px;
+    top: -42px;
+  }

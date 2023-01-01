@@ -1,0 +1,12 @@
+.showBlue{
+    color: white;
+    background-color: hsl(175, 92%, 52%);
+}
+.showGreen{
+    color: white;
+    background-color: green;
+}
+.showYellow{
+    color: white;
+    background-color: crimson;
+}

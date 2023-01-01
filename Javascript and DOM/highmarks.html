@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="table.css">
+</head>
+<body>
+    <h2>Students</h2>
+    <div id="students"></div>
+    <button onclick="showStudents()">Show Students</button>
+    <button onclick="highMarks()">high marks</button>
+    <button onclick="highStudents()">high Students</button>
+    <br>
+    <button onclick="clearData()">Clear Data</button>
+    <script>
+        let highlightMarks = false;
+        let highlightStudents = false;
+        let Students = [
+        {name: 'Bob', maths: 82, computers:88},
+ {name: 'Jack', maths:48, computers:49},
+ {name: 'Mary', maths: 92, computers:73},
+ {name: 'Dave', maths: 72, computers:89},
+ {name: 'Julia', maths: 52, computers:68},
+ {name: 'Steve', maths: 42, computers:47} 
+];
+function showStudents(){
+    const arr1 = Students.map(function(ele){
+        let str = '<tr class=\''+getClassStudent(ele)+'\'>';
+            str+= '<td class=\'td1\'>'+ele.name+ '</td>';
+            str+= '<td class=\''+getClassMarks(ele.maths)+'\'>'+ele.maths+ '</td>';
+            str+= '<td class=\''+getClassMarks(ele.computers)+'\'>'+ele.computers+ '</td>';
+            str+= '</tr>';
+            return str;
+     });
+     let header = '<tr>';
+    header+= '<th class=\'th1\'>Name</th>';
+    header+= '<th class=\'th1\'>Maths</th>';
+    header+= '<th class=\'th1\'>Computers</th>';
+    header+= '</tr>';
+let html= '<table class=\'table1\'>'+header+arr1.join('')+'</table>';
+    console.log(html);
+let element = document.getElementById('students');
+element.innerHTML = html;
+}
+function getClassMarks(marks){
+    if(marks>=75 && highlightMarks)
+    return 'td1 score75';
+    else if(marks<=50 && highlightMarks)
+    return 'td1 score50';
+    else
+    return 'td1';
+}
+function getClassStudent(st){
+    let tot= st.maths + st.computers;
+if(tot>=150 && highlightStudents)
+return 'total150';
+else if(tot<=100 && highlightStudents)
+return 'total100';
+else
+return '';
+}
+function highMarks(){
+    highlightMarks = true;
+    highlightStudents = false;
+    showStudents();
+}
+function highStudents() {
+    highlightStudents =true;
+    highMarks = false;
+    showStudents();
+  }
+  function clearData(){
+    highlightStudents =false;
+    highlightMarks = false;
+    showStudents();
+  }
+    </script>
+</body>
+</html>

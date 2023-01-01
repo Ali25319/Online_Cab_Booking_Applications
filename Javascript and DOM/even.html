@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo"> </div>
+    <button onclick="myFunction">Random Numbers</button>
+    <script>
+function myFunction() {
+var x = document.getElementById("demo")
+randomNum = Math.floor((Math.random() * 20) + 0);
+x.innerHTML = randomNum
+
+if (randomNum%2==1){
+    console.log("Even Number");
+}
+else{
+    console.log("Odd Number");
+}}
+    </script>
+</body>
+</html>

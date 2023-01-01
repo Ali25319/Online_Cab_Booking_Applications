@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Remove duplicates from an array</h1>
+    <script>
+function removeDuplicates(arr){
+// write code here
+
+	let  arr = [1,2,3,5,1,5,9,1,2,8];
+	//Arrays.sort(arr);
+	let  len = arr.length;	
+	let j=0;
+	for(let i=0; i<len-1; i++){
+		 if( arr[i] != arr[i+1]){
+		 arr[j++] =arr[i];
+				 }
+			}	  
+			arr[j++] = arr[len-1];
+			for(let k=0; k<j; k++){
+				console.log(arr[k] + " ");
+			}
+    }
+
+// use console.log for printing output
+
+// function removeDuplicates(arr, n)
+// {
+// 	// Return, if array is empty
+// 	// or contains a single element
+// 	if (n==0 || n==1)
+// 		return n;
+
+// 	var temp = new Array(n);
+
+// 	// Start traversing elements
+// 	var j = 0;
+// 	for (var i=0; i<n-1; i++)
+
+// 		// If current element is not equal
+// 		// to next element then store that
+// 		// current element
+// 		if (arr[i] != arr[i+1])
+// 			temp[j++] = arr[i];
+
+// 	// Store the last element as whether
+// 	// it is unique or repeated, it hasn't
+// 	// stored previously
+// 	temp[j++] = arr[n-1];
+
+// 	// Modify original array
+// 	for (var i=0; i<j; i++)
+// 		arr[i] = temp[i];
+
+// 	return j;
+// }
+
+//var arr = [1, 2, 2, 3, 4, 4, 4, 5, 5];
+	//var n = arr.length;
+
+	// removeDuplicates() returns new size of
+	// array.
+	//n = removeDuplicates(arr, n);
+
+	// Print updated array
+	//for (var i=0; i<n; i++)
+	//console.log( arr[i]+" ");
+    //console.log(n + ""); 
+
+
+
+</script>
+
+</body>
+</html>

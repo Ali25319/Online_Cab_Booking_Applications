@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<select id="dd01" >
+    <option > Select the Course</option>
+    <option value="1">Javascripts</option>
+    <option value="2">React</option>
+    <option value="3">Java</option>
+    <option value="4">Python</option>
+</select>
+<select id="dd02" >
+    <option >Select the Course</option>
+    <option>Javascripts</option>
+    <option>React</option>
+    <option>Angular</option>
+</select>
+<button onClick="display()">Display</button>
+<script>
+function display(){
+    let dd1 = document.getElementById('dd01');
+    console.log(dd1.value);
+    let dd2 = document.getElementById('dd02');
+    console.log(dd2.value);
+dd1.value = '1';
+dd2.value = 'React';
+}
+</script>
+</body>
+</html>

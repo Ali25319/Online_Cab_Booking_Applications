@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>List of Names</h1>
+    <div id="listNames"></div>
+
+    <button onclick="showNames()">Show Names</button>
+    <button onclick="hideNames()">Hide Names</button>
+    <script>
+        const names=['Steve Prince' , 'Anna Mathews', 'Tim Davids',
+    , 'julia Burton', 'mary james', 'ed johnson'];
+    // function showNames(){
+    //     const nameMap= names.map(function(name){
+    //         return '<li>'+ name +'</li>';
+    //     });
+    //     let str = '<ul>'+nameMap.join('')+'</ul>';
+    //     let element = document.getElementById('listNames');
+    //     element.innerHTML = str;
+    // }
+    function showNames() {
+        let nameMap = names.map(function (name) {
+            return '<li>'+name +'</li>';
+          });
+          let str =  nameMap.join('') ;
+          let element = document.getElementById('listNames');
+          element.innerHTML = str;
+      }
+    function hideNames() { 
+        let element = document.getElementById('listNames');
+        element.innerHTML = ' ';
+     }
+    </script>
+</body>
+</html>

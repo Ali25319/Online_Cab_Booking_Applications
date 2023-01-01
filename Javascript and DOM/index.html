@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom starting today by me</menu></title>
+</head>
+<body>
+    <h1> H1 is the largest  heading in html</h1>
+    <h2> Sales Data </h2>
+    <h3 id="name1">Seller: Jack Smith</h3>
+    <h4 id="sale">Total Sale :
+    <span id="qty"> 12 </span>
+ </h4>
+    <button onclick="addSale(1)">Add 1 to sale</button>
+    <button onclick="addSale(2)">Add 2 to sale</button>
+    <script>
+        function addSale(num){
+            let ele = document.getElementById('qty');
+            let quantity = +ele.innerHTML;
+            console.log(quantity);
+            ele.innerHTML = quantity + num;
+        }
+    </script>
+</body>
+<script src="dom.js"></script>
+
+</html>

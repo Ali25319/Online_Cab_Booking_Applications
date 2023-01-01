@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <h2 id="titleLine">students</h2>
+   <div id="students"></div> 
+   <button onclick="showStudents()">Show Students</button>
+   <button onclick="getNewStudents()">New Students</button>
+   <script>
+    let students = [
+  {name: 'Bob', maths:82, computer:88, code:'C++'},     
+  {name: 'Jack', maths:44, computer:80, code:'Java'},     
+  {name: 'Mary', maths:92, computer:73, code:'Python'},      
+  {name: 'Dave', maths:80, computer:89, code:'Javascripts'},     
+  {name: 'Julia', maths:58, computer:60, code:'Sql'},
+  {name: 'Steve', maths:42, computer:47, code:'React'}      
+   ];
+const codeOptions = ['C++', 'Java', 'JS', 'Python'];
+ function getNewStudents(){
+    let str = 'Name:<input type="text" id="name"><br/>';
+    str+= 'Maths:<input type="text" id="maths"><br/>';
+    str+= 'Computers:<input type="text" id="computers"><br/>'; 
+str+= makeCodeDD('code', codeOptions, 'select code', '')+'<br/>';
+str+= '<button onclick=\'addStudent()\'>Add Students</button>';
+
+let div = document.getElementById('students');
+div.innerHTML = str;
+}
+function addStudent(){
+    let st = {};
+    st.name= document.getElementById('name').value;
+    st.maths= document.getElementById('maths').value;
+    st.computers= document.getElementById('computers').value;
+    st.code= document.getElementById('code').value;
+    students.push(st);
+    showStudents();
+}
+ function makeCodeDD(id,arr, first, selVal){
+    const arr1 = arr.map(function(opt){
+        if (opt==selVal)
+  return '<option selected>'+opt+'</option>';
+  else
+  return '<option>'+opt+'</option>';
+    });
+  let header = '<option disabled>'+ first + '</option>';
+    if (selVal=='')
+ header = '<option disabled selected>'+first+'</option>';
+    let s1='<select id =\''+id+'\'>'+header+arr1.join('')+'</select>';
+        return s1;
+ }
+ function showStudents(){
+let title = document.getElementById('titleLine');
+title.innerHTML = 'Students Data';
+let element = document.getElementById('students');
+let stMap = students.map(function(ele){
+    let str = '<tr>';
+ str+= '<td class=\'td1\'>'+ele.name+'</td>';    
+ str+= '<td class=\'td1\'>'+ele.maths+'</td>';    
+ str+= '<td class=\'td1\'>'+ele.computers+'</td>';    
+ str+= '<td class=\'td1\'>'+ele.code+'</td>';    
+ str+= '<td class=\'td1\'><button class =\'remBtn\' onclick =\'remove("'+ele.name+'")\'> Remove <button></td>';
+str+= '<td class=\'td1\'><button class =\'remBtn\' onclick =\'remove("'+ele.maths+'")\'> Remove <button></td>';
+str+= '<td class=\'td1\'><button class =\'remBtn\' onclick =\'remove("'+ele.computers+'")\'> Remove <button></td>';
+});
+ }
+   </script>
+</body>
+</html>

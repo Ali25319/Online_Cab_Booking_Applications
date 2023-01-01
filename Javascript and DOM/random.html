@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- what is random function in js.
+write code to get random no form 1,3,5,7,9,11
+by using random function on button click. -->
+<!-- <h1>Random function</h1>
+<div id="data"></div>
+<button onclick="random">RandomFunctions</button>
+<script> -->
+<!-- //     function getRandomInt(max) {
+//   return Math.floor(Math.random() * max);
+// } console.log(getRandomInt(8)); -->
+<p>By clicking this button you will genarte a number from 1 to 100 </p> 
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+var x = document.getElementById("demo")
+randomNum = Math.floor((Math.random() * 20) + 0);
+x.innerHTML = randomNum
+
+if (randomNum%2==1){
+    console.log("Even Number");
+}
+else{
+    console.log("Odd Number");
+}}
+
+</script>
+
+</script>
+</body>
+</html>

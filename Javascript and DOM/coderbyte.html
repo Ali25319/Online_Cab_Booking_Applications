@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>hellosomethings </h2>
+    <script>
+//         function sum_array(arr) {
+  
+//   // store our final answer
+//   var sum = 0;
+  
+//   // loop through entire array
+//   for (var i = 0; i < arr.length; i++) {
+    
+//     // loop through each inner array
+//     for (var j = 0; j < arr[i].length; j++) {
+      
+//       // add this number to the current final sum
+//       sum += arr[i][j];
+      
+//     }
+    
+// }
+//   return sum;
+  
+// }
+
+// sum_array([[3, 2], [1], [4, 12]]);
+function lucky_sevens(arr) {
+  
+  // if less than 3 elements then this challenge is not possible
+  if (arr.length < 3) {
+    return "not possible";
+  }
+  
+  // because we know there are at least 3 elements we can
+  // start the loop at the 3rd element in the array (i=2)
+  // and check it along with the two previous elements (i-1) and (i-2)
+  for (var i = 2; i < arr.length; i++) {
+    if (arr[i] + arr[i-1] + arr[i-2] === 7) {
+      return true; 
+    }
+  }
+  
+  // if loop is finished and no elements summed to 7
+  return false;
+  
+}
+
+lucky_sevens([2, 1, 5, 1, 0]);
+
+    </script>
+</body>
+</html>

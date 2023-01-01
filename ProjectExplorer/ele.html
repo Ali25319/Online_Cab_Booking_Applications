@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Set function(1)</h2>
+    <h3>forEach(2)</h3>
+    <script>
+
+        let arr =[ 1,2,2,4,3,3,4,6,4,5,6,7];
+    //     function removeElements(arr) { 
+    //       return [...new Set(arr)];
+    //   }
+    //   console.log(removeElements(arr).join(" "));
+ //forEach
+        //    function removeElements(array){
+        //     return array.filter((el, index) => array.indexOf(el)===index);
+            
+        //    }
+        //    console.log(removeElements(arr).join(" "));
+
+        function removeElements(array){
+            let x = {};
+            array.forEach(function (i) {
+                if (!x[i]){
+                    x[i]=true;
+                }
+            });
+         return Object.keys(x);
+        }
+        console.log(removeElements(arr).join(" "));
+          
+    </script>
+</body>
+</html>
